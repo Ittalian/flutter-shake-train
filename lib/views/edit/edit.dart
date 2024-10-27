@@ -71,7 +71,8 @@ class EditState extends State<Edit> {
   Widget build(BuildContext context) {
     final trainRouteViewModel = context.watch<TrainRouteViewModel>();
     return BaseImageContainer(
-      imagePath: 'images/edit.jpg',
+      imagePath:
+          widget.trainRouteId == null ? 'images/edit.jpg' : 'images/add.jpg',
       child: Scaffold(
         backgroundColor: Colors.white.withOpacity(0),
         body: Column(
