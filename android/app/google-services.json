@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "620953405748",
+    "project_id": "shake-train",
+    "storage_bucket": "shake-train.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620953405748:android:3d35b2e0cc36d9ddec3d61",
+        "android_client_info": {
+          "package_name": "com.example.shake_train"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEac8DIEw7RsYOCAQW2MRV67-AMqYVTR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
