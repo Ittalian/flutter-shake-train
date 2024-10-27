@@ -90,8 +90,10 @@ class IndexState extends State<Index> {
             ),
             SingleChildScrollView(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  const Padding(
+                    padding: EdgeInsets.only(top: 50),
+                  ),
                   for (var trainRoute in trainRouteViewModel.routes)
                     TrainRouteTile(
                       trainRouteViewModel: trainRouteViewModel,
