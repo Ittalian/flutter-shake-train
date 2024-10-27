@@ -29,7 +29,10 @@ class IndexState extends State<Index> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               for (var trainRoute in trainRouteViewModel.routes)
-                TrainRouteTile(trainRoute: trainRoute),
+                TrainRouteTile(
+                  trainRouteViewModel: trainRouteViewModel,
+                  trainRoute: trainRoute,
+                ),
             ],
           ),
         ),

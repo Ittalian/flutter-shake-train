@@ -19,8 +19,8 @@ class TrainRoute {
 
   Map<String, dynamic> toMap() {
     return {
-      'depart_station_id': departStation,
-      'arrival_station_id': arrivalStation,
+      'depart_station': departStation,
+      'arrival_station': arrivalStation,
     };
   }
 }

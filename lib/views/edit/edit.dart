@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shake_train/config/router/routes.dart';
 import 'package:shake_train/models/train_route.dart';
 import 'package:shake_train/view_models/train_route_view_model.dart';
 import 'package:shake_train/widgets/base/base_button.dart';
@@ -52,19 +53,35 @@ class EditState extends State<Edit> {
   Future<void> handleSaveTrainRoute(
       TrainRouteViewModel trainRouteViewModel) async {
     if (widget.trainRouteId == null) {
-      trainRouteViewModel.addTrainRoute(
-        TrainRoute(
-          departStation: inputDepartStation,
-          arrivalStation: inputArrivalStation,
-        ),
-      );
+      await addTrainRoute(trainRouteViewModel);
     } else {
-      trainRouteViewModel.editTrainRoute(
-        widget.trainRouteId!,
-        inputDepartStation,
-        inputArrivalStation,
-      );
+      await editTrainRoute(trainRouteViewModel);
     }
+    moveHome();
+  }
+
+  Future<void> addTrainRoute(TrainRouteViewModel trainRouteViewModel) async {
+    await trainRouteViewModel.addTrainRoute(
+      TrainRoute(
+        departStation: inputDepartStation,
+        arrivalStation: inputArrivalStation,
+      ),
+    );
+  }
+
+  Future<void> editTrainRoute(TrainRouteViewModel trainRouteViewModel) async {
+    await trainRouteViewModel.editTrainRoute(
+      widget.trainRouteId!,
+      inputDepartStation,
+      inputArrivalStation,
+    );
+  }
+
+  moveHome() {
+    Navigator.pushNamed(
+      context,
+      Routes.home,
+    );
   }
 
   @override
